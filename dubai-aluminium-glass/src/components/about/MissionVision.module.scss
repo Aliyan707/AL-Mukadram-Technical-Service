@@ -1,0 +1,84 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.missionVision {
+  @include section-padding;
+  background: $color-background-light;
+
+  .container {
+    @include container;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+
+    .title {
+      font-family: $font-heading;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+
+      .highlight {
+        @include text-gold-gradient;
+      }
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-2xl;
+
+    @include respond-to(lg) {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+
+  .card {
+    @include glass-effect(0.05, 20px);
+    padding: $spacing-2xl;
+    border-radius: $radius-2xl;
+    text-align: center;
+    transition: all $transition-luxury;
+    cursor: pointer;
+
+    &:hover {
+      @include glass-effect(0.08, 25px);
+      box-shadow: $shadow-gold;
+
+      .iconWrapper {
+        transform: scale(1.1) rotate(5deg);
+      }
+    }
+
+    .iconWrapper {
+      @include flex-center;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto $spacing-xl;
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 50%;
+      transition: transform $transition-luxury;
+
+      .icon {
+        font-size: $font-size-4xl;
+        color: $color-primary;
+      }
+    }
+
+    .cardTitle {
+      font-family: $font-heading;
+      font-size: $font-size-2xl;
+      font-weight: 700;
+      margin-bottom: $spacing-md;
+      color: $color-text-primary;
+    }
+
+    .description {
+      font-size: $font-size-base;
+      color: $color-text-secondary;
+      line-height: 1.8;
+    }
+  }
+}
