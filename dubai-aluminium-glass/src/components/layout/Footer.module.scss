@@ -1,0 +1,225 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.footer {
+  position: relative;
+  background: $color-secondary-dark;
+  padding: $spacing-4xl 0 $spacing-xl;
+  overflow: hidden;
+
+  @include respond-to(md) {
+    padding: $spacing-3xl 0 $spacing-lg;
+  }
+
+  .container {
+    @include container;
+  }
+
+  .footerGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-3xl;
+    margin-bottom: $spacing-3xl;
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-2xl;
+    }
+
+    @include respond-to(sm) {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+
+  .footerColumn {
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: $spacing-md;
+
+      .logoText {
+        font-family: $font-heading;
+        font-size: $font-size-2xl;
+        font-weight: 800;
+        @include text-gold-gradient;
+        line-height: 1;
+      }
+
+      .logoAccent {
+        font-family: $font-accent;
+        font-size: $font-size-xs;
+        color: $color-text-secondary;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 4px;
+      }
+    }
+
+    .description {
+      color: $color-text-secondary;
+      line-height: 1.8;
+      margin-bottom: $spacing-lg;
+    }
+
+    .socialLinks {
+      display: flex;
+      gap: $spacing-md;
+
+      a {
+        @include flex-center;
+        width: 45px;
+        height: 45px;
+        @include glass-effect(0.05, 10px);
+        border-radius: 50%;
+        color: $color-primary;
+        font-size: $font-size-lg;
+        transition: all $transition-luxury;
+
+        &:hover {
+          @include gold-gradient;
+          color: $color-secondary;
+          transform: translateY(-4px);
+          box-shadow: $shadow-gold;
+        }
+      }
+    }
+
+    .columnTitle {
+      font-family: $font-heading;
+      font-size: $font-size-xl;
+      font-weight: 700;
+      color: $color-text-primary;
+      margin-bottom: $spacing-lg;
+      position: relative;
+      padding-bottom: $spacing-sm;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        @include gold-gradient;
+      }
+    }
+
+    .linkList {
+      list-style: none;
+
+      li {
+        margin-bottom: $spacing-sm;
+
+        a {
+          color: $color-text-secondary;
+          font-size: $font-size-base;
+          transition: all $transition-base;
+          display: inline-block;
+
+          &:hover {
+            color: $color-primary;
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+
+    .contactList {
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: flex-start;
+        gap: $spacing-md;
+        margin-bottom: $spacing-md;
+        color: $color-text-secondary;
+
+        svg {
+          color: $color-primary;
+          font-size: $font-size-lg;
+          margin-top: 2px;
+          flex-shrink: 0;
+        }
+
+        a {
+          color: $color-text-secondary;
+          transition: color $transition-base;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+
+  .footerBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: $spacing-xl;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    @include respond-to(sm) {
+      flex-direction: column;
+      gap: $spacing-md;
+      text-align: center;
+    }
+
+    .copyright {
+      color: $color-text-muted;
+      font-size: $font-size-sm;
+    }
+
+    .footerBottomLinks {
+      display: flex;
+      gap: $spacing-lg;
+
+      a {
+        color: $color-text-muted;
+        font-size: $font-size-sm;
+        transition: color $transition-base;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  .decorativeLines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    opacity: 0.1;
+
+    .line {
+      position: absolute;
+      height: 1px;
+      @include gold-gradient;
+
+      &:nth-child(1) {
+        top: 20%;
+        left: 0;
+        right: 60%;
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        left: 30%;
+        right: 10%;
+      }
+
+      &:nth-child(3) {
+        top: 80%;
+        left: 10%;
+        right: 40%;
+      }
+    }
+  }
+}

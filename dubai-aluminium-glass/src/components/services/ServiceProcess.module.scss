@@ -1,0 +1,112 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.process {
+  @include section-padding;
+  background: $color-background-light;
+
+  .container {
+    @include container;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: $spacing-4xl;
+
+    .title {
+      font-family: $font-heading;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: $spacing-md;
+
+      .highlight {
+        @include text-gold-gradient;
+      }
+    }
+
+    .subtitle {
+      font-size: $font-size-lg;
+      color: $color-text-secondary;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .stepsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-2xl;
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .stepCard {
+    @include glass-effect(0.05, 20px);
+    padding: $spacing-2xl;
+    border-radius: $radius-2xl;
+    text-align: center;
+    position: relative;
+    transition: all $transition-luxury;
+    cursor: pointer;
+
+    &:hover {
+      @include glass-effect(0.08, 25px);
+      box-shadow: $shadow-gold;
+
+      .iconWrapper {
+        transform: scale(1.1) rotate(5deg);
+      }
+    }
+
+    .stepNumber {
+      position: absolute;
+      top: -15px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      @include flex-center;
+      @include gold-gradient;
+      color: $color-secondary;
+      font-family: $font-heading;
+      font-size: $font-size-xl;
+      font-weight: 800;
+      border-radius: 50%;
+      box-shadow: $shadow-gold;
+    }
+
+    .iconWrapper {
+      @include flex-center;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto $spacing-lg;
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 50%;
+      transition: transform $transition-luxury;
+
+      .icon {
+        font-size: $font-size-3xl;
+        color: $color-primary;
+      }
+    }
+
+    .stepTitle {
+      font-family: $font-accent;
+      font-size: $font-size-xl;
+      font-weight: 700;
+      color: $color-text-primary;
+      margin-bottom: $spacing-sm;
+    }
+
+    .description {
+      font-size: $font-size-sm;
+      color: $color-text-secondary;
+      line-height: 1.7;
+    }
+  }
+}

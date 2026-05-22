@@ -1,0 +1,93 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.whatsappFloat {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: $z-index-fixed;
+
+  @include respond-to(sm) {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsappButton {
+    @include flex-center;
+    width: 65px;
+    height: 65px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    font-size: 32px;
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+    cursor: pointer;
+    transition: all $transition-luxury;
+    animation: pulse 2s infinite;
+
+    @include respond-to(sm) {
+      width: 55px;
+      height: 55px;
+      font-size: 28px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+    }
+
+    .ripple {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid #25D366;
+      animation: ripple 1.5s infinite;
+    }
+  }
+
+  .tooltip {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: $color-secondary;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $radius-lg;
+    font-family: $font-accent;
+    font-weight: 600;
+    font-size: $font-size-sm;
+    white-space: nowrap;
+    box-shadow: $shadow-lg;
+    pointer-events: none;
+
+    @include respond-to(sm) {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 8px solid white;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+    }
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
