@@ -32,7 +32,7 @@ const Footer = () => {
           <div className={styles.footerColumn}>
             <div className={styles.logo}>
               <span className={styles.logoText}>Al Mukadram</span>
-              <span className={styles.logoAccent}>Aluminium & Glass</span>
+              <span className={styles.logoAccent}>Technical Service</span>
             </div>
             <p className={styles.description}>
               Leading provider of premium aluminium and glass solutions in Dubai.
@@ -88,15 +88,15 @@ const Footer = () => {
               </li>
               <li>
                 <FaPhone />
-                <a href="tel:+971501234567">+971 50 123 4567</a>
+                <a href="tel:+971569285796">+971 56 928 5796</a>
               </li>
               <li>
                 <FaEnvelope />
-                <a href="mailto:info@almukadram.ae">info@almukadram.ae</a>
+                <a href="mailto:almukadramtechnicalservice@gmail.com">almukadramtechnicalservice@gmail.com</a>
               </li>
               <li>
                 <FaWhatsapp />
-                <a href="https://wa.me/971501234567" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/971569285796" target="_blank" rel="noopener noreferrer">
                   WhatsApp Us
                 </a>
               </li>
@@ -106,12 +106,8 @@ const Footer = () => {
 
         <div className={styles.footerBottom}>
           <p className={styles.copyright}>
-            © {currentYear} Al Mukadram Aluminium & Glass. All rights reserved.
+            © {currentYear} Al Mukadram Technical Service. All rights reserved.
           </p>
-          <div className={styles.footerBottomLinks}>
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms">Terms & Conditions</Link>
-          </div>
         </div>
       </div>
 

@@ -11,7 +11,7 @@ const WhatsAppFloat = () => {
   return (
     <div className={styles.whatsappFloat}>
       <motion.a
-        href="https://wa.me/971501234567?text=Hello! I'm interested in your aluminium and glass services."
+        href="https://wa.me/971569285796?text=Hello! I'm interested in your aluminium and glass services."
         target="_blank"
         rel="noopener noreferrer"
         className={styles.whatsappButton}

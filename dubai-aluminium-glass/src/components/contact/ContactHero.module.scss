@@ -8,11 +8,8 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin-top: 80px;
-
   @include respond-to(md) {
     min-height: 400px;
-    margin-top: 70px;
   }
 
   .backgroundImage {

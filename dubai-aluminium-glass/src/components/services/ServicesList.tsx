@@ -9,7 +9,7 @@ const ServicesList = () => {
     {
       title: 'Aluminium Fabrication',
       description: 'Custom aluminium fabrication services for windows, doors, and structural elements.',
-      image: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?q=80&w=2070',
+      image: 'http://images.unsplash.com/photo-1598302936625-6075fbd98dd7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       features: [
         'Custom Design & Manufacturing',
         'Powder Coating in Any Color',

@@ -1,15 +1,20 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import styles from './AboutHero.module.scss';
 
 const AboutHero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.backgroundImage}>
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069"
           alt="About Us"
+          fill
+          priority
+          sizes="100vw"
+          className={styles.bgImage}
         />
       </div>
 
@@ -44,8 +49,8 @@ const AboutHero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            We are Dubai's leading provider of premium aluminium and glass solutions,
-            dedicated to transforming spaces with innovative designs and exceptional craftsmanship.
+            Al Mukadram Technical Service is Dubai's trusted name for premium aluminium and glass
+            installations — delivering exceptional craftsmanship across villas, offices, hotels, and commercial projects.
           </motion.p>
         </motion.div>
       </div>

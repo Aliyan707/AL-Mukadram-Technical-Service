@@ -24,23 +24,24 @@
   .imageSection {
     .imageWrapper {
       position: relative;
+      height: 600px;
       border-radius: $radius-2xl;
       overflow: hidden;
       box-shadow: $shadow-gold;
 
-      img {
-        width: 100%;
-        height: 600px;
-        object-fit: cover;
-        transition: transform $transition-luxury;
+      @include respond-to(md) {
+        height: 400px;
+      }
 
-        @include respond-to(md) {
-          height: 400px;
-        }
+      img,
+      .storyImage {
+        object-fit: cover !important;
+        transition: transform $transition-luxury;
       }
 
       &:hover {
-        img {
+        img,
+        .storyImage {
           transform: scale(1.05);
         }
       }

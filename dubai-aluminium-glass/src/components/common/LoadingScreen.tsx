@@ -39,7 +39,7 @@ const LoadingScreen = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className={styles.logo}>Al Mukadram</div>
-            <div className={styles.logoAccent}>Aluminium & Glass</div>
+            <div className={styles.logoAccent}>Technical Service</div>
           </motion.div>
 
           <motion.div

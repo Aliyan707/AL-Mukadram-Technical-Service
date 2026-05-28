@@ -13,11 +13,9 @@ const Navbar = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -30,12 +28,7 @@ const Navbar = () => {
   ];
 
   return (
-    <motion.nav
-      className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-    >
+    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           <motion.div
@@ -43,7 +36,7 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
           >
             <span className={styles.logoText}>Al Mukadram</span>
-            <span className={styles.logoAccent}>Aluminium & Glass</span>
+            <span className={styles.logoAccent}>Technical Service</span>
           </motion.div>
         </Link>
 
@@ -70,12 +63,12 @@ const Navbar = () => {
 
         {/* CTA Buttons */}
         <div className={styles.ctaButtons}>
-          <a href="tel:+971501234567" className={styles.phoneBtn}>
+          <a href="tel:+971569285796" className={styles.phoneBtn}>
             <FaPhone />
-            <span>+971 50 123 4567</span>
+            <span>+971569285796</span>
           </a>
           <a
-            href="https://wa.me/971501234567"
+            href="https://wa.me/971569285796"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.whatsappBtn}
@@ -123,12 +116,12 @@ const Navbar = () => {
               ))}
             </ul>
             <div className={styles.mobileCta}>
-              <a href="tel:+971501234567" className={styles.mobilePhoneBtn}>
+              <a href="tel:+971569285796" className={styles.mobilePhoneBtn}>
                 <FaPhone />
                 <span>Call Now</span>
               </a>
               <a
-                href="https://wa.me/971501234567"
+                href="https://wa.me/971569285796"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.mobileWhatsappBtn}
@@ -140,7 +133,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 };
 
